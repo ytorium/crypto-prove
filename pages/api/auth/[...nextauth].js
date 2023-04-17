@@ -25,8 +25,8 @@ export default NextAuth({
             console.info(twitterHandle, userID)
             if (account) {
                 token['credentials'] = {
-                    authToken: account.oauth_token,
-                    authSecret: account.oauth_token_secret,
+                    authToken: process.env.ACCESS_TOKEN, //account.oauth_token,
+                    authSecret: process.env.ACCESS_TOKEN_SECRET //account.oauth_token_secret,
                 }
             }
             return token
