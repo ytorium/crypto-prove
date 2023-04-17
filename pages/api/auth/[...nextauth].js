@@ -31,6 +31,7 @@ export default NextAuth({
             //}
             return token
         },
+        console.info("vvvvvvv");
         async session({session, token, user}) {
             // Send properties to the client, like an access_token from a provider.
             let userData = cloneDeep(token.userProfile);
