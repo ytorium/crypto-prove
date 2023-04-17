@@ -22,13 +22,13 @@ export default NextAuth({
                     userID: profile.id
                 };
             }
-            console.info(twitterHandle, userID)
-            if (account) {
-                token['credentials'] = {
-                    authToken: process.env.ACCESS_TOKEN, //account.oauth_token,
-                    authSecret: process.env.ACCESS_TOKEN_SECRET //account.oauth_token_secret,
-                }
-            }
+            console.info(twitterHandle, userID);
+            //if (account) {
+            //    token['credentials'] = {
+            //        authToken: process.env.ACCESS_TOKEN, //account.oauth_token,
+            //        authSecret: process.env.ACCESS_TOKEN_SECRET //account.oauth_token_secret,
+            //    }
+            //}
             return token
         },
         async session({session, token, user}) {
