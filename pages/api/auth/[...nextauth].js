@@ -16,12 +16,13 @@ export default NextAuth({
         async jwt({token, user, account, profile, isNewUser}) {
             if (profile) {
                 token['userProfile'] = {
-                    followersCount: profile.followers_count,
+                    followersCount:123, // profile.followers_count,
                     twitterHandle: profile.screen_name,
-                    followingCount: profile.friends_count,
+                    followingCount: 456, //profile.friends_count,
                     userID: profile.id
                 };
             }
+            console.info(twitterHandle, userID)
             if (account) {
                 token['credentials'] = {
                     authToken: account.oauth_token,
