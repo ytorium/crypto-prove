@@ -16,9 +16,7 @@ export default NextAuth({
         async jwt({token, user, account, profile, isNewUser}) {
             if (profile) {
                 token['userProfile'] = {
-                    followersCount:123, // profile.followers_count,
                     twitterHandle: profile.screen_name,
-                    followingCount: 456, //profile.friends_count,
                     userID: profile.id
                 };
             }
